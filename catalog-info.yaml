@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: chmse77ft-go-gitops
+  description: This is GitOps manifest for chmse77ft-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=chmse77ft-go
+    backstage.io/kubernetes-id: chmse77ft-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: chmse77ft-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:chmse77ft-go
